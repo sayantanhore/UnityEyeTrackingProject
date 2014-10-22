@@ -59,7 +59,8 @@ public class ImageBox : eDriven.Gui.Components.VGroup {
 			HorizontalCenter = 0, // the image is centered (important when not square image)
 			VerticalCenter = 0,
 			MouseEnabled = true,
-			ScaleMode = ImageScaleMode.ScaleToFit
+			ScaleMode = ImageScaleMode.ScaleToFit,
+			//Mode = ImageMode.Normal
 		};
 		
 		AddChild (image);
@@ -108,9 +109,12 @@ public class ImageBox : eDriven.Gui.Components.VGroup {
 			textureChanged = false;
 			if (null != texture){
 				//Debug.Log (texture);
+				float width = texture.width;
+				float height = texture.height;
 				image.Texture = texture;
-				float width = image.Texture.width;
-				float height = image.Texture.height;
+				//float width = image.Texture.width;
+				//float height = image.Texture.height;
+				Debug.Log(width + "::" + height);
 				image.Height = (float)Screen.height / 3;
 				image.Width = image.Height * (float)(width / height);
 				this.Height = image.Height;

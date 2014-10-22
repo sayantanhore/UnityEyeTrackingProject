@@ -131,7 +131,6 @@ public class ImageDisplay : eDriven.Gui.Gui {
 				MouseEnabled = true,
 				ScaleMode = ImageScaleMode.ScaleToFit
 				
-				
 			};
 			
 			image.AddEventListener("creationComplete", ImageCreationHandler);
